@@ -1,0 +1,6 @@
+../Core/Src/UART.c:17:6:UART2_Init	4	static
+../Core/Src/UART.c:131:6:UARTputc	16	static
+../Core/Src/UART.c:143:6:UARTputs	16	static
+../Core/Src/UART.c:159:6:UARTgetc	4	static
+../Core/Src/UART.c:180:6:UARTprintf	136	static
+../Core/Src/UART.c:202:7:getcNB	4	static

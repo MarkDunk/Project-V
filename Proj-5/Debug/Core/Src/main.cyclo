@@ -1,0 +1,4 @@
+../Core/Src/main.c:69:5:main	1
+../Core/Src/main.c:121:6:SystemClock_Config	4
+../Core/Src/main.c:166:6:calculateAndDisplayMotorSpeed	1
+../Core/Src/main.c:205:6:Error_Handler	1

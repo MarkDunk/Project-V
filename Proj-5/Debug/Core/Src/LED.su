@@ -1,0 +1,3 @@
+../Core/Src/LED.c:19:6:LED_Init	4	static
+../Core/Src/LED.c:43:6:LED_Toggle	4	static
+../Core/Src/LED.c:55:6:LED_Flash	16	static

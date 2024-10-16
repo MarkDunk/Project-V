@@ -1,0 +1,6 @@
+../Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+../Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	2
+../Core/Src/Encoder.c:34:6:Encoder_Init	1
+../Core/Src/Encoder.c:79:6:HAL_TIM_IC_CaptureCallback	3
+../Core/Src/Encoder.c:102:11:Calculate_Encoder_TimePeriod	1
+../Core/Src/Encoder.c:121:10:getEncoderCHValue	3

@@ -1,0 +1,6 @@
+../Core/Src/UART.c:17:6:UART2_Init	2
+../Core/Src/UART.c:131:6:UARTputc	2
+../Core/Src/UART.c:143:6:UARTputs	2
+../Core/Src/UART.c:159:6:UARTgetc	2
+../Core/Src/UART.c:180:6:UARTprintf	1
+../Core/Src/UART.c:202:7:getcNB	2
