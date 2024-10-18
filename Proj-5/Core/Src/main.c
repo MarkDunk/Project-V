@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -26,6 +27,9 @@
 /* USER CODE BEGIN Includes */
 #include "UART.h"
 #include "Encoder.h"
+#include "DriveMotor.h"
+#include "Stepper.h"
+#include "PWM.h"
 
 /* USER CODE END Includes */
 
@@ -47,6 +51,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+uint8_t State[4] = {0};
 
 /* USER CODE END PV */
 
@@ -91,14 +97,23 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_UART4_Init();
   /* USER CODE BEGIN 2 */
 
   Encoder_Init();
+  PWMInit();
+  DriveMotor_Init();
+  Stepper_Init();
+  Home_Stepper();
+
 
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_2);
+
+  HAL_UART_Receive_DMA(&huart4, State, 4);
 
   /* USER CODE END 2 */
 
@@ -109,6 +124,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  //Bytes 1=right motor sp, 2=left motor sp, 3=stepper angle, 4=servo angle
+	  SetMotorSpeed(1, State[0]);
+	  SetMotorSpeed(2, State[1]);
+	  Set_Position(State[2]);
+	  Set_Angle(State[3]);
 	  calculateAndDisplayMotorSpeed();
   }
   /* USER CODE END 3 */
@@ -152,8 +172,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2|RCC_PERIPHCLK_TIM2;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2|RCC_PERIPHCLK_UART4
+                              |RCC_PERIPHCLK_TIM2;
   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+  PeriphClkInit.Uart4ClockSelection = RCC_UART4CLKSOURCE_PCLK1;
   PeriphClkInit.Tim2ClockSelection = RCC_TIM2CLK_HCLK;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
@@ -176,25 +198,20 @@ void calculateAndDisplayMotorSpeed() {
     // Assuming 20 vanes per wheel revolution and period in microseconds
     float leftSpeed = (float)(1.0 / (leftPeriod * 20e-6)); // Left wheel speed in revolutions per second
     float rightSpeed = (float)(1.0 / (rightPeriod * 20e-6)); // Right wheel speed in revolutions per second
-
+    leftSpeed = leftSpeed*3.14*3;
+    rightSpeed = rightSpeed*3.14*3;
     // Display the calculated motor wheel speed on the terminal
-    UARTprintf("Left Wheel Speed: %.2f revolutions/s\n", (double)leftSpeed);
-    UARTprintf("Right Wheel Speed: %.2f revolutions/s\n", (double)rightSpeed);
+        UARTprintf("Left Wheel Speed: %.2f inch/s\n", (double)leftSpeed);
+        UARTprintf("Right Wheel Speed: %.2f inch/s\n", (double)rightSpeed);
+//    UARTprintf("Left Wheel Speed: %.2f revolutions/s\n", (double)leftSpeed);
+//    UARTprintf("Right Wheel Speed: %.2f revolutions/s\n", (double)rightSpeed);
 //    UARTputc((char)leftSpeed);
 }
 
-//void TIM2_IRQHandler(void){
-//	if (IS_BIT_SET(TIM2->SR, TIM_SR_CC1IF)) {
-//	        leftEncoder[1] = leftEncoder[0]; // Update previous timestamp
-//	        leftEncoder[0] = TIM2->CCR1; // Capture current timestamp
-//	    }
-//
-//	    // Handle right wheel encoder interrupt
-//	    if (IS_BIT_SET(TIM2->SR, TIM_SR_CC2IF)) {
-//	        rightEncoder[1] = rightEncoder[0]; // Update previous timestamp
-//	        rightEncoder[0] = TIM2->CCR2; // Capture current timestamp
-//	    }
-//}
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	HAL_UART_Transmit(&huart2, State, 4, 100);
+	HAL_UART_Receive_DMA(&huart4, State, 4);
+}
 
 /* USER CODE END 4 */
 

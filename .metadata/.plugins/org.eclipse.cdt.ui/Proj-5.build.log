@@ -1,10 +1,22 @@
-19:45:56 **** Incremental Build of configuration Debug for project Proj-5 ****
+17:08:37 **** Incremental Build of configuration Debug for project Proj-5 ****
 make -j7 all 
-arm-none-eabi-size  Proj-5.elf 
-   text	   data	    bss	    dec	    hex	filename
-  31720	    468	   2148	  34336	   8620	Proj-5.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:62:32: error: expected expression before ')' token
+   62 |                 }else if (pos <)
+      |                                ^
+make: *** [Core/Src/subdir.mk:67: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:11: warning: implicit declaration of function 'Set_Position' [-Wimplicit-function-declaration]
+  130 |           Set_Position(State[2]);
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:131:11: warning: implicit declaration of function 'Set_Angle'; did you mean 'SetAngle'? [-Wimplicit-function-declaration]
+  131 |           Set_Angle(State[3]);
+      |           ^~~~~~~~~
+      |           SetAngle
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
 
-19:45:56 Build Finished. 0 errors, 0 warnings. (took 144ms)
+17:08:38 Build Failed. 3 errors, 2 warnings. (took 530ms)
 

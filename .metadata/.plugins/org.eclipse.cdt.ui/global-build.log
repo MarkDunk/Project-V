@@ -954,3 +954,405 @@ arm-none-eabi-size  Proj-5.elf
   31720	    468	   2148	  34336	   8620	Proj-5.elf
 Finished building: default.size.stdout
  
+16:07:09 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.d" -MT"Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+arm-none-eabi-gcc "../Core/Src/Encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoder.d" -MT"Core/Src/Encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoder.o"
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:27:9: warning: implicit declaration of function 'SET_BITS' [-Wimplicit-function-declaration]
+   27 |         SET_BITS        (RCC->AHBENR, RCC_AHBENR_GPIOCEN);
+      |         ^~~~~~~~
+../Core/Src/DriveMotor.c:29:9: warning: implicit declaration of function 'CLEAR_BITS' [-Wimplicit-function-declaration]
+   29 |         CLEAR_BITS      (GPIOC->MODER, 0x03UL << (2*12));
+      |         ^~~~~~~~~~
+../Core/Src/DriveMotor.c:56:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   56 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Src/DriveMotor.c: In function 'MotorsForward':
+../Core/Src/DriveMotor.c:168:9: warning: implicit declaration of function 'GPIO_ODR_SET'; did you mean 'GPIO_ODR_1'? [-Wimplicit-function-declaration]
+  168 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |         ^~~~~~~~~~~~
+      |         GPIO_ODR_1
+../Core/Src/DriveMotor.c:168:23: error: 'C' undeclared (first use in this function)
+  168 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                       ^
+../Core/Src/DriveMotor.c:168:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/DriveMotor.c:168:29: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+  168 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'MotorsBackward':
+../Core/Src/DriveMotor.c:174:23: error: 'C' undeclared (first use in this function)
+  174 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                       ^
+../Core/Src/DriveMotor.c:174:29: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  174 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c:175:29: error: expected ';' before 'GPIO_ODR_SET'
+  175 |         SetMotorSpeed(1, 90)
+      |                             ^
+      |                             ;
+  176 |         GPIO_ODR_SET( C, 9, GPIO_ODR_BIT_CLEAR );//Back on left
+      |         ~~~~~~~~~~~~         
+../Core/Src/DriveMotor.c: In function 'HalfRight':
+../Core/Src/DriveMotor.c:180:23: error: 'C' undeclared (first use in this function)
+  180 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                       ^
+../Core/Src/DriveMotor.c:180:29: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+  180 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'HalfLeft':
+../Core/Src/DriveMotor.c:186:23: error: 'C' undeclared (first use in this function)
+  186 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                       ^
+../Core/Src/DriveMotor.c:186:29: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+arm-none-eabi-gcc "../Core/Src/LED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/LED.d" -MT"Core/Src/LED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/LED.o"
+arm-none-eabi-gcc "../Core/Src/PWM.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PWM.d" -MT"Core/Src/PWM.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PWM.o"
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UART.o"
+  186 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'RevRight':
+../Core/Src/DriveMotor.c:192:23: error: 'C' undeclared (first use in this function)
+  192 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                       ^
+../Core/Src/DriveMotor.c:192:29: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  192 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c:193:29: error: expected ';' before 'GPIO_ODR_SET'
+  193 |         SetMotorSpeed(1, 40)
+      |                             ^
+      |                             ;
+  194 |         GPIO_ODR_SET( C, 9, GPIO_ODR_BIT_CLEAR );//Back on left
+      |         ~~~~~~~~~~~~         
+../Core/Src/DriveMotor.c: In function 'RevLeft':
+../Core/Src/DriveMotor.c:198:23: error: 'C' undeclared (first use in this function)
+  198 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//rev right motor
+      |                       ^
+../Core/Src/DriveMotor.c:198:29: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  198 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//rev right motor
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c:199:29: error: expected ';' before 'GPIO_ODR_SET'
+arm-none-eabi-gcc "../Core/Src/dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/dma.d" -MT"Core/Src/dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dma.o"
+  199 |         SetMotorSpeed(1, 90)
+      |                             ^
+      |                             ;
+  200 |         GPIO_ODR_SET( C, 9, GPIO_ODR_BIT_CLEAR );//rev on left
+      |         ~~~~~~~~~~~~         
+../Core/Src/DriveMotor.c: In function 'FullRight':
+../Core/Src/DriveMotor.c:204:23: error: 'C' undeclared (first use in this function)
+  204 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                       ^
+../Core/Src/Stepper.c: In function 'Home_Stepper':
+../Core/Src/Stepper.c:41:17: warning: implicit declaration of function 'FULL_CW'; did you mean 'Full_CW'? [-Wimplicit-function-declaration]
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+   41 |                 FULL_CW();
+      |                 ^~~~~~~
+      |                 Full_CW
+../Core/Src/DriveMotor.c:204:29: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+  204 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_SET );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/UART.c: In function 'UART2_Init':
+../Core/Src/UART.c:114:32: warning: multi-line comment [-Wcomment]
+  114 | USART2 -> CR1 |= USART_CR1_UE; // REF MANUAL + STM32F303XE.h\
+      |                                ^
+../Core/Src/DriveMotor.c:206:29: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  206 |         GPIO_ODR_SET( C, 9, GPIO_ODR_BIT_CLEAR );//Forward on left
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'FullLeft':
+../Core/Src/DriveMotor.c:210:23: error: 'C' undeclared (first use in this function)
+  210 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                       ^
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f3xx_hal_msp.d" -MT"Core/Src/stm32f3xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f3xx_it.d" -MT"Core/Src/stm32f3xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+../Core/Src/DriveMotor.c:210:29: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  210 |         GPIO_ODR_SET( C, 8, GPIO_ODR_BIT_CLEAR );//Reverse right motor
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c:212:29: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+  212 |         GPIO_ODR_SET( C, 9, GPIO_ODR_BIT_SET );//Forward on left
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'SetMotorDir':
+../Core/Src/DriveMotor.c:227:31: error: 'C' undeclared (first use in this function)
+  227 |                 GPIO_ODR_SET( C, 12, GPIO_ODR_BIT_SET );        //set the left motor to go forward
+      |                               ^
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+../Core/Src/DriveMotor.c:227:38: error: 'GPIO_ODR_BIT_SET' undeclared (first use in this function)
+  227 |                 GPIO_ODR_SET( C, 12, GPIO_ODR_BIT_SET );        //set the left motor to go forward
+      |                                      ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/system_stm32f3xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f3xx.d" -MT"Core/Src/system_stm32f3xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f3xx.o"
+../Core/Src/DriveMotor.c:229:17: warning: implicit declaration of function 'Wait_ms' [-Wimplicit-function-declaration]
+  229 |                 Wait_ms(100);
+      |                 ^~~~~~~
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+../Core/Src/DriveMotor.c:230:38: error: 'GPIO_ODR_BIT_CLEAR' undeclared (first use in this function)
+  230 |                 GPIO_ODR_SET( C, 13, GPIO_ODR_BIT_CLEAR );//set the left motor to go forwards
+      |                                      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/DriveMotor.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+16:08:44 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc "../Core/Src/utility.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/utility.d" -MT"Core/Src/utility.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/utility.o"
+In file included from ../Core/Src/DriveMotor.c:7:
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c:58:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   58 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c: In function 'MotorsBackward':
+../Core/Src/DriveMotor.c:176:9: error: called object is not a function or function pointer
+  176 |         SetMotorSpeed(1, 90)
+      |         ^~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'RevRight':
+../Core/Src/DriveMotor.c:194:9: error: called object is not a function or function pointer
+  194 |         SetMotorSpeed(1, 40)
+      |         ^~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'RevLeft':
+../Core/Src/DriveMotor.c:200:9: error: called object is not a function or function pointer
+  200 |         SetMotorSpeed(1, 90)
+      |         ^~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'SetMotorDir':
+../Core/Src/DriveMotor.c:230:17: warning: implicit declaration of function 'Wait_ms' [-Wimplicit-function-declaration]
+  230 |                 Wait_ms(100);
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/DriveMotor.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+16:09:50 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+In file included from ../Core/Src/DriveMotor.c:7:
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c:58:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   58 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c: In function 'RevRight':
+../Core/Src/DriveMotor.c:194:9: error: called object is not a function or function pointer
+  194 |         SetMotorSpeed(1, 40)
+      |         ^~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'RevLeft':
+../Core/Src/DriveMotor.c:200:9: error: called object is not a function or function pointer
+  200 |         SetMotorSpeed(1, 90)
+      |         ^~~~~~~~~~~~~
+../Core/Src/DriveMotor.c: In function 'SetMotorDir':
+../Core/Src/DriveMotor.c:230:17: warning: implicit declaration of function 'Wait_ms' [-Wimplicit-function-declaration]
+  230 |                 Wait_ms(100);
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/DriveMotor.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+16:10:04 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+In file included from ../Core/Src/DriveMotor.c:7:
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c:58:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   58 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c: In function 'SetMotorDir':
+../Core/Src/DriveMotor.c:230:17: warning: implicit declaration of function 'Wait_ms' [-Wimplicit-function-declaration]
+  230 |                 Wait_ms(100);
+      |                 ^~~~~~~
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
+arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35240	    468	   2364	  38072	   94b8	Proj-5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proj-5.list
+ 
+16:11:03 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+In file included from ../Core/Src/DriveMotor.c:7:
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c:58:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   58 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c: In function 'SetMotorDir':
+../Core/Src/DriveMotor.c:230:17: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+  230 |                 HAL_Delay(100);
+      |                 ^~~~~~~~~
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
+arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35240	    468	   2364	  38072	   94b8	Proj-5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proj-5.list
+ 
+16:12:48 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/DriveMotor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DriveMotor.d" -MT"Core/Src/DriveMotor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DriveMotor.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/DriveMotor.c:7:
+../Core/Src/DriveMotor.c: In function 'DriveMotor_Init':
+../Core/Src/DriveMotor.c:57:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   57 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*10));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+../Core/Src/DriveMotor.c:58:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+   58 |         SET_BITS (GPIOC->AFR[0], 0x03UL << (4*11));
+      |                                         ^~
+../Core/Inc/Utility.h:21:42: note: in definition of macro 'SET_BITS'
+   21 | #define SET_BITS(port, bits) ((port) |= (bits))
+      |                                          ^~~~
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
+arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35240	    468	   2364	  38072	   94b8	Proj-5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proj-5.list
+ 
+16:40:04 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Stepper.c: In function 'Home_Stepper':
+../Core/Src/Stepper.c:40:9: error: 'pos' undeclared (first use in this function)
+   40 |         pos = steps/2;
+      |         ^~~
+../Core/Src/Stepper.c:40:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/Stepper.c:42:17: warning: implicit declaration of function 'FULL_CW'; did you mean 'Full_CW'? [-Wimplicit-function-declaration]
+   42 |                 FULL_CW();
+      |                 ^~~~~~~
+      |                 Full_CW
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:59:21: error: 'pos' undeclared (first use in this function)
+   59 |                 if (pos > steps){
+      |                     ^~~
+../Core/Src/Stepper.c:61:32: error: expected expression before ')' token
+   61 |                 }else if (pos <)
+      |                                ^
+make: *** [Core/Src/subdir.mk:67: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+16:43:18 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:62:32: error: expected expression before ')' token
+   62 |                 }else if (pos <)
+      |                                ^
+make: *** [Core/Src/subdir.mk:67: Core/Src/Stepper.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+16:56:43 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/PWM.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PWM.d" -MT"Core/Src/PWM.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PWM.o"
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:62:32: error: expected expression before ')' token
+   62 |                 }else if (pos <)
+      |                                ^
+../Core/Src/PWM.c: In function 'AngleToCount':
+../Core/Src/PWM.c:53:25: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '-8500' to '204' [-Woverflow]
+   53 |                 angle = -8500;
+      |                         ^
+../Core/Src/PWM.c:56:25: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '8500' to '52' [-Woverflow]
+   56 |                 angle = 8500;
+      |                         ^~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:28: error: 'State' undeclared (first use in this function)
+  128 |           SetMotorSpeed(1, State[0]);
+      |                            ^~~~~
+../Core/Src/main.c:128:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:130:11: warning: implicit declaration of function 'Set_Position' [-Wimplicit-function-declaration]
+  130 |           Set_Position(State[2]);
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:131:11: warning: implicit declaration of function 'Set_Angle'; did you mean 'SetAngle'? [-Wimplicit-function-declaration]
+  131 |           Set_Angle(State[3]);
+      |           ^~~~~~~~~
+      |           SetAngle
+make: *** [Core/Src/subdir.mk:67: Core/Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+17:08:37 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:62:32: error: expected expression before ')' token
+   62 |                 }else if (pos <)
+      |                                ^
+make: *** [Core/Src/subdir.mk:67: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:11: warning: implicit declaration of function 'Set_Position' [-Wimplicit-function-declaration]
+  130 |           Set_Position(State[2]);
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:131:11: warning: implicit declaration of function 'Set_Angle'; did you mean 'SetAngle'? [-Wimplicit-function-declaration]
+  131 |           Set_Angle(State[3]);
+      |           ^~~~~~~~~
+      |           SetAngle
+"make -j7 all" terminated with exit code 2. Build might be incomplete.

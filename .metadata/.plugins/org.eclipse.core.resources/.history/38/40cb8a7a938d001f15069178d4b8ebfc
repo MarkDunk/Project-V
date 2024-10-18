@@ -1,0 +1,18 @@
+/*
+ * PWM.h
+ *
+ *  Created on: Mar. 9, 2023
+ *      Author: mark
+ */
+
+#ifndef SRC_PWM_H_
+#define SRC_PWM_H_
+#include "stm32f303xe.h"
+
+void PWMInit(void);
+
+uint16_t AngleToCount(int angle);
+
+void SetAngle(int angle);
+
+#endif /* SRC_PWM_H_ */
