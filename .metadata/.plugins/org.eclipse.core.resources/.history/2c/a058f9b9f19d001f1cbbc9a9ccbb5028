@@ -135,7 +135,7 @@ float* calculateRealMotorSpeed() {
 
     float rotationRate[2] = {leftSpeed, rightSpeed};
 
-    return (rotationRate);
+    return rotationRate;
 
 }
 

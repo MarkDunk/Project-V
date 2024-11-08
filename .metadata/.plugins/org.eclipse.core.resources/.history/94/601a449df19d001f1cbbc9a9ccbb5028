@@ -39,7 +39,7 @@ void Encoder_Init(void); // Initialize encoders
 //void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
 //void TIM2_IRQHandler(void); // Handle encoder interrupts
 uint32_t* Calculate_Encoder_TimePeriod(void); // Calculate time period for encoders
-float* calculateAndDisplayMotorSpeed(void); // Calculate and display motor speed
+void calculateAndDisplayMotorSpeed(void); // Calculate and display motor speed
 
 // External global variables
 extern uint32_t Global_LeftEncoderPeriod; // Left encoder period (us per vane)

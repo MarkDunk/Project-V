@@ -1,0 +1,6 @@
+../Core/Src/Stepper.c:21:6:Stepper_Init	4	static
+../Core/Src/Stepper.c:32:6:Home_Stepper	8	static
+../Core/Src/Stepper.c:51:6:Step	4	static
+../Core/Src/Stepper.c:59:6:Set_Position	24	static
+../Core/Src/Stepper.c:70:6:Full_CW	8	static
+../Core/Src/Stepper.c:76:6:Full_CCW	8	static

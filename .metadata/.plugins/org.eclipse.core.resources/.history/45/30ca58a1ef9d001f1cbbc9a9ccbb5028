@@ -128,8 +128,8 @@ int main(void)
 	  SetMotorSpeed(1, State[0]);
 	  SetMotorSpeed(2, State[1]);
 	  Set_Position(State[2]);
-	  SetAngle(State[3]);
-	  //calculateAndDisplayMotorSpeed();
+	  Set_Angle(State[3]);
+	  calculateAndDisplayMotorSpeed();
   }
   /* USER CODE END 3 */
 }

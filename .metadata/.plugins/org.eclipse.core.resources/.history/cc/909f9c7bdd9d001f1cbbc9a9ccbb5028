@@ -55,28 +55,26 @@ void Step(void){
 	}
 }
 
-
 void Set_Position(uint8_t angle){
-	uint8_t desired = (steps/256)*angle;
-
-	if(pos > desired){
-		Full_CCW();
+	if(angle < 128){
+		if (pos > steps){
+			Full_CW();
+		}else if (pos <)
 	}
-	else if(pos < desired){
-		Full_CW();
+	else{
+		angle = angle - 128;
+
 	}
 }
 
 void Full_CW(void){
 	index += 2;
 	Step();
-	pos++;
 }
 
 void Full_CCW(void){
 	index -= 2;
 	Step();
-	pos--;
 }
 
 //void Half_CW(void){

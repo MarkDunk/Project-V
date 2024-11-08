@@ -155,12 +155,12 @@ void SetMotorSpeed( uint8_t motor, uint16_t dutyCycle )
 	//      Make sure you cap the DutyCycle to 100% / 0% so to not cause odd system behaviours
 	if (motor == 1)
 	{
-		//TIM8->CCR1 = dutyCycle;
+		TIM8->CCR1 = dutyCycle;
 	}
 	
 	if (motor == 2)
 	{
-		//TIM8->CCR2 = dutyCycle;
+		TIM8->CCR2 = dutyCycle;
 	}
 	
 }	

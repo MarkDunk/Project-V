@@ -132,10 +132,7 @@ float* calculateRealMotorSpeed() {
     float rightSpeed = (float)(1.0 / (rightPeriod * 20e-6)); // Right wheel speed in revolutions per second
     leftSpeed = leftSpeed*3.14*7.5; //Roughly 3"
     rightSpeed = rightSpeed*3.14*7.5;
-
     float rotationRate[2] = {leftSpeed, rightSpeed};
-
-    return (rotationRate);
 
 }
 

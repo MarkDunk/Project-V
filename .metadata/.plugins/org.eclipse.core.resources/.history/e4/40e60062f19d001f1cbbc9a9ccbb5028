@@ -117,7 +117,7 @@ uint32_t* Calculate_Encoder_TimePeriod(void) {
 
 }
 
-float* calculateRealMotorSpeed() {
+void calculateRealMotorSpeed() {
     // Calculate encoder periods
     uint32_t* both = Calculate_Encoder_TimePeriod();
 
@@ -130,12 +130,10 @@ float* calculateRealMotorSpeed() {
     // Assuming 20 vanes per wheel revolution and period in microseconds
     float leftSpeed = (float)(1.0 / (leftPeriod * 20e-6)); // Left wheel speed in revolutions per second
     float rightSpeed = (float)(1.0 / (rightPeriod * 20e-6)); // Right wheel speed in revolutions per second
-    leftSpeed = leftSpeed*3.14*7.5; //Roughly 3"
-    rightSpeed = rightSpeed*3.14*7.5;
+    leftSpeed = leftSpeed*3.14*3;
+    rightSpeed = rightSpeed*3.14*3;
 
-    float rotationRate[2] = {leftSpeed, rightSpeed};
-
-    return (rotationRate);
+    //multiply by circumference
 
 }
 

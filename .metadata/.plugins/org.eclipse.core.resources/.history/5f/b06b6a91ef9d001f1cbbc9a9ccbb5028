@@ -11,7 +11,6 @@
 
 void Stepper_Init(void);
 void Home_Stepper(void);
-void Set_Position(uint8_t angle);
 void Step(void);
 void Full_CW(void);
 void Full_CCW(void);
