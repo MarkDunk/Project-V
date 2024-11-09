@@ -1,10 +1,18 @@
-19:00:00 **** Incremental Build of configuration Debug for project Proj-5 ****
+17:13:38 **** Incremental Build of configuration Debug for project Proj-5 ****
 make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
 arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
    text	   data	    bss	    dec	    hex	filename
-  34544	    472	   2280	  37296	   91b0	Proj-5.elf
+  34480	    472	   2272	  37224	   9168	Proj-5.elf
 Finished building: default.size.stdout
  
+Finished building: Proj-5.list
+ 
 
-19:00:01 Build Finished. 0 errors, 0 warnings. (took 359ms)
+17:13:39 Build Finished. 0 errors, 0 warnings. (took 955ms)
 

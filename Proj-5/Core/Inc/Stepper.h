@@ -13,9 +13,9 @@ void Stepper_Init(void);
 void Home_Stepper(void);
 void Set_Position(uint8_t angle);
 void Step(void);
-void Full_CW(void);
-void Full_CCW(void);
-void Half_CW(void);
-void Half_CCW(void);
+void Full_CW();
+void Full_CCW();
+void Half_CW();
+void Half_CCW();
 
 #endif /* SRC_STEPPER_H_ */

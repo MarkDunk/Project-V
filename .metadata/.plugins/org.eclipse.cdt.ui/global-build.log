@@ -574,3 +574,199 @@ arm-none-eabi-size  Proj-5.elf
   34544	    472	   2280	  37296	   91b0	Proj-5.elf
 Finished building: default.size.stdout
  
+17:08:11 **** Incremental Build of configuration Debug for project PWM ****
+make -j7 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15988	     12	   1780	  17780	   4574	PWM.elf
+Finished building: default.size.stdout
+ 
+17:08:13 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/Stepper.c:9:
+../Core/Inc/Stepper.h:15:1: error: unknown type name 'bool'
+   15 | bool Step(void);
+      | ^~~~
+../Core/Inc/Stepper.h:11:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   10 | #include "stm32f303xe.h"
+  +++ |+#include <stdbool.h>
+   11 | 
+../Core/Inc/Stepper.h:16:14: error: unknown type name 'bool'
+   16 | void Full_CW(bool step);
+      |              ^~~~
+../Core/Inc/Stepper.h:16:14: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:17:15: error: unknown type name 'bool'
+   17 | void Full_CCW(bool step);
+      |               ^~~~
+../Core/Inc/Stepper.h:17:15: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:18:14: error: unknown type name 'bool'
+   18 | void Half_CW(bool step);
+      |              ^~~~
+../Core/Inc/Stepper.h:18:14: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:19:15: error: unknown type name 'bool'
+   19 | void Half_CCW(bool step);
+      |               ^~~~
+../Core/Inc/Stepper.h:19:15: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/Stepper.c: In function 'Home_Stepper':
+../Core/Src/Stepper.c:34:17: warning: implicit declaration of function 'Full_CW' [-Wimplicit-function-declaration]
+   34 |                 Full_CW();
+      |                 ^~~~~~~
+../Core/Src/Stepper.c:37:25: warning: implicit declaration of function 'Full_CCW' [-Wimplicit-function-declaration]
+   37 |                         Full_CCW();
+      |                         ^~~~~~~~
+../Core/Src/Stepper.c: At top level:
+../Core/Src/Stepper.c:51:1: error: unknown type name 'bool'
+   51 | bool Step(void){
+      | ^~~~
+../Core/Src/Stepper.c:10:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+    9 | #include "Stepper.h"
+  +++ |+#include <stdbool.h>
+   10 | #include "stm32f303xe.h"
+../Core/Src/Stepper.c:78:6: warning: conflicting types for 'Full_CW'; have 'void(void)'
+   78 | void Full_CW(void){
+      |      ^~~~~~~
+../Core/Src/Stepper.c:34:17: note: previous implicit declaration of 'Full_CW' with type 'void(void)'
+   34 |                 Full_CW();
+      |                 ^~~~~~~
+../Core/Src/Stepper.c:85:6: warning: conflicting types for 'Full_CCW'; have 'void(void)'
+   85 | void Full_CCW(void){
+      |      ^~~~~~~~
+../Core/Src/Stepper.c:37:25: note: previous implicit declaration of 'Full_CCW' with type 'void(void)'
+   37 |                         Full_CCW();
+      |                         ^~~~~~~~
+../Core/Src/Stepper.c:15:16: warning: 'index' defined but not used [-Wunused-variable]
+   15 | static uint8_t index = 0;
+      |                ^~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:31:
+../Core/Inc/Stepper.h:15:1: error: unknown type name 'bool'
+   15 | bool Step(void);
+      | ^~~~
+../Core/Inc/Stepper.h:1:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+  +++ |+#include <stdbool.h>
+    1 | /*
+../Core/Inc/Stepper.h:16:14: error: unknown type name 'bool'
+   16 | void Full_CW(bool step);
+      |              ^~~~
+../Core/Inc/Stepper.h:16:14: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:17:15: error: unknown type name 'bool'
+   17 | void Full_CCW(bool step);
+      |               ^~~~
+../Core/Inc/Stepper.h:17:15: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:18:14: error: unknown type name 'bool'
+   18 | void Half_CW(bool step);
+      |              ^~~~
+../Core/Inc/Stepper.h:18:14: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Inc/Stepper.h:19:15: error: unknown type name 'bool'
+   19 | void Half_CCW(bool step);
+      |               ^~~~
+../Core/Inc/Stepper.h:19:15: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+make: *** [Core/Src/subdir.mk:73: Core/Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+17:09:48 **** Incremental Build of configuration Debug for project PWM ****
+make -j7 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15988	     12	   1780	  17780	   4574	PWM.elf
+Finished building: default.size.stdout
+ 
+17:09:49 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Stepper.c: In function 'Home_Stepper':
+../Core/Src/Stepper.c:34:17: error: too few arguments to function 'Full_CW'
+   34 |                 Full_CW();
+      |                 ^~~~~~~
+In file included from ../Core/Src/Stepper.c:9:
+../Core/Inc/Stepper.h:16:6: note: declared here
+   16 | void Full_CW(uint8_t step);
+      |      ^~~~~~~
+../Core/Src/Stepper.c:37:25: error: too few arguments to function 'Full_CCW'
+   37 |                         Full_CCW();
+      |                         ^~~~~~~~
+../Core/Inc/Stepper.h:17:6: note: declared here
+   17 | void Full_CCW(uint8_t step);
+      |      ^~~~~~~~
+../Core/Src/Stepper.c:43:17: error: too few arguments to function 'Full_CW'
+   43 |                 Full_CW();
+      |                 ^~~~~~~
+../Core/Inc/Stepper.h:16:6: note: declared here
+   16 | void Full_CW(uint8_t step);
+      |      ^~~~~~~
+../Core/Src/Stepper.c: In function 'Set_Position':
+../Core/Src/Stepper.c:67:17: error: too few arguments to function 'Full_CCW'
+   67 |                 Full_CCW();
+      |                 ^~~~~~~~
+../Core/Inc/Stepper.h:17:6: note: declared here
+   17 | void Full_CCW(uint8_t step);
+      |      ^~~~~~~~
+../Core/Src/Stepper.c:70:17: error: too few arguments to function 'Full_CW'
+   70 |                 Full_CW();
+      |                 ^~~~~~~
+../Core/Inc/Stepper.h:16:6: note: declared here
+   16 | void Full_CW(uint8_t step);
+      |      ^~~~~~~
+../Core/Src/Stepper.c: At top level:
+../Core/Src/Stepper.c:78:6: error: conflicting types for 'Full_CW'; have 'void(void)'
+   78 | void Full_CW(void){
+      |      ^~~~~~~
+../Core/Inc/Stepper.h:16:6: note: previous declaration of 'Full_CW' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+   16 | void Full_CW(uint8_t step);
+      |      ^~~~~~~
+../Core/Src/Stepper.c:85:6: error: conflicting types for 'Full_CCW'; have 'void(void)'
+   85 | void Full_CCW(void){
+      |      ^~~~~~~~
+../Core/Inc/Stepper.h:17:6: note: previous declaration of 'Full_CCW' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+   17 | void Full_CCW(uint8_t step);
+      |      ^~~~~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/Stepper.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+17:10:23 **** Incremental Build of configuration Debug for project PWM ****
+make -j7 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15988	     12	   1780	  17780	   4574	PWM.elf
+Finished building: default.size.stdout
+ 
+17:10:24 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
+arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34560	    472	   2280	  37312	   91c0	Proj-5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proj-5.list
+ 
+17:13:37 **** Incremental Build of configuration Debug for project PWM ****
+make -j7 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15988	     12	   1780	  17780	   4574	PWM.elf
+Finished building: default.size.stdout
+ 
+17:13:38 **** Incremental Build of configuration Debug for project Proj-5 ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/Stepper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Stepper.d" -MT"Core/Src/Stepper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Stepper.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "Proj-5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mark/Documents/Courses/F24/Project-V/Proj-5/STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proj-5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Proj-5.elf
+ 
+arm-none-eabi-size  Proj-5.elf 
+arm-none-eabi-objdump -h -S Proj-5.elf  > "Proj-5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34480	    472	   2272	  37224	   9168	Proj-5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proj-5.list
+ 

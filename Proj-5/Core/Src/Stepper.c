@@ -72,15 +72,19 @@ uint8_t Return_Angle(){
 }
 
 void Full_CW(void){
-	index += 2;
-	Step();
-	pos++;
+	if(!(GPIOC->IDR | (0x3 << 5))){
+		index += 2;
+		Step();
+		pos++;
+	}
 }
 
 void Full_CCW(void){
-	index -= 2;
-	Step();
-	pos--;
+	if(!(GPIOC->IDR | (0x3 << 5))){
+		index += 2;
+		Step();
+		pos--;
+	}
 }
 
 //void Half_CW(void){
