@@ -1,27 +1,10 @@
-11:51:00 **** Incremental Build of configuration Debug for project Proj-5 ****
+19:00:00 **** Incremental Build of configuration Debug for project Proj-5 ****
 make -j7 all 
-arm-none-eabi-gcc "../Core/Src/Encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Encoder.d" -MT"Core/Src/Encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Encoder.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:62:6: error: conflicting types for 'calculateAndDisplayMotorSpeed'; have 'void()'
-   62 | void calculateAndDisplayMotorSpeed();
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/main.c:29:
-../Core/Inc/Encoder.h:42:8: note: previous declaration of 'calculateAndDisplayMotorSpeed' with type 'float *(void)'
-   42 | float* calculateAndDisplayMotorSpeed(void); // Calculate and display motor speed
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:188:6: error: conflicting types for 'calculateAndDisplayMotorSpeed'; have 'void()'
-  188 | void calculateAndDisplayMotorSpeed() {
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Inc/Encoder.h:42:8: note: previous declaration of 'calculateAndDisplayMotorSpeed' with type 'float *(void)'
-   42 | float* calculateAndDisplayMotorSpeed(void); // Calculate and display motor speed
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/Encoder.c: In function 'calculateRealMotorSpeed':
-../Core/Src/Encoder.c:138:12: warning: function returns address of local variable [-Wreturn-local-addr]
-  138 |     return rotationRate;
-      |            ^~~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:67: Core/Src/main.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j7 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size  Proj-5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34544	    472	   2280	  37296	   91b0	Proj-5.elf
+Finished building: default.size.stdout
+ 
 
-11:51:01 Build Failed. 4 errors, 1 warnings. (took 460ms)
+19:00:01 Build Finished. 0 errors, 0 warnings. (took 359ms)
 

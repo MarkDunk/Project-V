@@ -117,7 +117,7 @@ uint32_t* Calculate_Encoder_TimePeriod(void) {
 
 }
 
-float* calculateRealMotorSpeed() {
+void calculateRealMotorSpeed() {
     // Calculate encoder periods
     uint32_t* both = Calculate_Encoder_TimePeriod();
 
@@ -133,9 +133,9 @@ float* calculateRealMotorSpeed() {
     leftSpeed = leftSpeed*3.14*7.5; //Roughly 3"
     rightSpeed = rightSpeed*3.14*7.5;
 
-    float rotationRate[2] = {leftSpeed, rightSpeed};
+//    float rotationRate[2] = {leftSpeed, rightSpeed};
 
-    return (rotationRate);
+//    return (rotationRate);
 
 }
 

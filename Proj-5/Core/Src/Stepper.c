@@ -57,7 +57,7 @@ void Step(void){
 
 
 void Set_Position(uint8_t angle){
-	uint8_t desired = (steps/256)*angle;
+	uint16_t desired = (steps/256)*angle;
 
 	if(pos > desired){
 		Full_CCW();
@@ -65,6 +65,10 @@ void Set_Position(uint8_t angle){
 	else if(pos < desired){
 		Full_CW();
 	}
+}
+
+uint8_t Return_Angle(){
+	return (uint8_t) ((pos/steps)*255);
 }
 
 void Full_CW(void){

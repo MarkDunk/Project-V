@@ -33,8 +33,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/UART.h \
  ../Core/Inc/Encoder.h \
  ../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303xe.h \
- ../Core/Inc/utility.h ../Core/Inc/tim.h ../Core/Inc/DriveMotor.h \
- ../Core/Inc/Stepper.h ../Core/Inc/PWM.h
+ ../Core/Inc/utility.h ../Core/Inc/tim.h ../Core/Inc/Stepper.h \
+ ../Core/Inc/PWM.h ../Core/Inc/DCMotor.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 ../Core/Inc/stm32f3xx_hal_conf.h:
@@ -76,6 +76,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303xe.h:
 ../Core/Inc/utility.h:
 ../Core/Inc/tim.h:
-../Core/Inc/DriveMotor.h:
 ../Core/Inc/Stepper.h:
 ../Core/Inc/PWM.h:
+../Core/Inc/DCMotor.h:

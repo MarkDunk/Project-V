@@ -24,7 +24,7 @@ void PWMInit(void){
 	//Enable APB2 bus
 	RCC->APB2ENR |= (0x1UL << 16);
 	//for 1us clock
-	TIM15->PSC = 36;
+	TIM15->PSC = 72;
 	//20ms period
 	TIM15->ARR = 20000;
 	//enable ARPE

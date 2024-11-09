@@ -1,0 +1,136 @@
+#include "DCMotor.h"
+#include "Utility.h"
+#include "stm32f303xe.h"
+
+// Motor Pins Configuration
+#define LEFT_MOTOR_PWM_PIN       10  // PC10
+#define RIGHT_MOTOR_PWM_PIN      11  // PC11
+#define LEFT_MOTOR_FWD_PIN       12  // PC12
+#define LEFT_MOTOR_BWD_PIN       13  // PC13
+#define RIGHT_MOTOR_FWD_PIN       8  // PC8
+#define RIGHT_MOTOR_BWD_PIN       9  // PC9
+
+// Constants for Duty Cycle Range
+#define DCMOTOR_MIN_DUTY_CYCLE   50   // Minimum duty cycle to spin motor
+#define DCMOTOR_MAX_DUTY_CYCLE   100  // Maximum duty cycle for motor
+
+/*************************************************************
+ * DCMotor_Init() - Initiate and configure DC motors.
+ *************************************************************/
+
+void configure_pwm_channel(TIM_TypeDef* TIM, uint32_t CCMR_OCM_Mask, uint32_t channel, uint32_t CCER_CCE, uint32_t CCER_CCP) {
+    if (channel == 1) {
+        FORCE_BITS(TIM->CCMR1, CCMR_OCM_Mask, 0x6UL << TIM_CCMR1_OC1M_Pos); // Set to PWM mode
+        SET_BITS(TIM->CCMR1, TIM_CCMR1_OC1PE); // Enable preload
+        SET_BITS(TIM->CCER, CCER_CCE); // Enable channel
+        CLEAR_BITS(TIM->CCER, CCER_CCP); // Active high
+        CLEAR_BITS(TIM->CCR1, 0xFFFFUL); // Initialize duty cycle to 0
+    } else if (channel == 2) {
+        FORCE_BITS(TIM->CCMR1, CCMR_OCM_Mask, 0x6UL << TIM_CCMR1_OC2M_Pos); // Set to PWM mode
+        SET_BITS(TIM->CCMR1, TIM_CCMR1_OC2PE); // Enable preload
+        SET_BITS(TIM->CCER, CCER_CCE); // Enable channel
+        CLEAR_BITS(TIM->CCER, CCER_CCP); // Active high
+        CLEAR_BITS(TIM->CCR2, 0xFFFFUL); // Initialize duty cycle to 0
+    }
+}
+
+void DCMotor_Init(void){
+    ENABLE_GPIO_CLOCK(C); // Enable GPIO Clock for Port C
+
+    // Configure Direction Control Pins
+    GPIO_MODER_SET(C, LEFT_MOTOR_FWD_PIN, GPIO_MODE_OUT);
+    GPIO_MODER_SET(C, LEFT_MOTOR_BWD_PIN, GPIO_MODE_OUT);
+    GPIO_MODER_SET(C, RIGHT_MOTOR_FWD_PIN, GPIO_MODE_OUT);
+    GPIO_MODER_SET(C, RIGHT_MOTOR_BWD_PIN, GPIO_MODE_OUT);
+
+    GPIO_OTYPER_SET(C, LEFT_MOTOR_FWD_PIN, GPIO_OTYPE_PP);
+    GPIO_OTYPER_SET(C, LEFT_MOTOR_BWD_PIN, GPIO_OTYPE_PP);
+    GPIO_OTYPER_SET(C, RIGHT_MOTOR_FWD_PIN, GPIO_OTYPE_PP);
+    GPIO_OTYPER_SET(C, RIGHT_MOTOR_BWD_PIN, GPIO_OTYPE_PP);
+
+    GPIO_PUPDR_SET(C, LEFT_MOTOR_FWD_PIN, GPIO_PUPD_NO);
+    GPIO_PUPDR_SET(C, LEFT_MOTOR_BWD_PIN, GPIO_PUPD_NO);
+    GPIO_PUPDR_SET(C, RIGHT_MOTOR_FWD_PIN, GPIO_PUPD_NO);
+    GPIO_PUPDR_SET(C, RIGHT_MOTOR_BWD_PIN, GPIO_PUPD_NO);
+
+    // Set motors to STOP initially
+    DCMotor_Stop();
+
+    // Configure Speed Control Pins
+    GPIO_MODER_SET(C, LEFT_MOTOR_PWM_PIN, GPIO_MODE_AF);
+    GPIO_MODER_SET(C, RIGHT_MOTOR_PWM_PIN, GPIO_MODE_AF);
+    GPIO_AFR_SET(C, LEFT_MOTOR_PWM_PIN, 4);
+    GPIO_AFR_SET(C, RIGHT_MOTOR_PWM_PIN, 4);
+
+    GPIO_OTYPER_SET(C, LEFT_MOTOR_PWM_PIN, GPIO_OTYPE_PP);
+    GPIO_OTYPER_SET(C, RIGHT_MOTOR_PWM_PIN, GPIO_OTYPE_PP);
+    GPIO_PUPDR_SET(C, LEFT_MOTOR_PWM_PIN, GPIO_PUPD_NO);
+    GPIO_PUPDR_SET(C, RIGHT_MOTOR_PWM_PIN, GPIO_PUPD_NO);
+
+    // Configure Timer 8 for PWM control
+    SET_BITS(RCC->APB2ENR, RCC_APB2ENR_TIM8EN); // Enable TIM8
+    SET_BITS(TIM8->PSC, 71UL); // Set prescaler for 1us
+    FORCE_BITS(TIM8->ARR, 0xFFFFUL, 999UL); // 1ms period (ARR = 999)
+
+    SET_BITS(TIM8->CR1, TIM_CR1_ARPE); // Enable ARR preload
+    SET_BITS(TIM8->BDTR, TIM_BDTR_MOE); // Enable main output (MOE)
+
+    // Configure PWM channels for both motors
+    configure_pwm_channel(TIM8, TIM_CCMR1_OC1M_Msk, 1, TIM_CCER_CC1NE, TIM_CCER_CC1NP);
+    configure_pwm_channel(TIM8, TIM_CCMR1_OC2M_Msk, 2, TIM_CCER_CC2NE, TIM_CCER_CC2NP);
+
+    // Start TIM8
+    SET_BITS(TIM8->EGR, TIM_EGR_UG);
+    SET_BITS(TIM8->CR1, TIM_CR1_CEN);
+}
+
+/*************************************************************
+ * DCMotor_SetSpeed() - Sets the speed for a DC motor.
+ *************************************************************/
+void DCMotor_SetSpeed(uint8_t motor, uint16_t dutyCycle){
+    if (dutyCycle < DCMOTOR_MIN_DUTY_CYCLE) dutyCycle = DCMOTOR_MIN_DUTY_CYCLE;
+    if (dutyCycle > DCMOTOR_MAX_DUTY_CYCLE) dutyCycle = DCMOTOR_MAX_DUTY_CYCLE;
+
+    uint16_t pulseWidth = dutyCycle * 10; // Convert to pulse width (in us)
+    if (motor == DCMOTOR_LEFT) FORCE_BITS(TIM8->CCR1, 0xFFFFUL, pulseWidth);
+    else if (motor == DCMOTOR_RIGHT) FORCE_BITS(TIM8->CCR2, 0xFFFFUL, pulseWidth);
+}
+
+/*************************************************************
+ * DCMotor_SetDir() - Sets the direction of a DC motor.
+ *************************************************************/
+void DCMotor_SetDir(uint8_t motor, uint8_t dir){
+    if (motor == DCMOTOR_LEFT) {
+        CLEAR_BITS(GPIOC->ODR, GPIO_ODR_12 | GPIO_ODR_13); // Stop motor
+        HAL_Delay(5);
+        if (dir == DCMOTOR_FWD) SET_BITS(GPIOC->ODR, GPIO_ODR_12);
+        else if (dir == DCMOTOR_BWD) SET_BITS(GPIOC->ODR, GPIO_ODR_13);
+    } else if (motor == DCMOTOR_RIGHT) {
+        CLEAR_BITS(GPIOC->ODR, GPIO_ODR_8 | GPIO_ODR_9); // Stop motor
+        HAL_Delay(5);
+        if (dir == DCMOTOR_FWD) SET_BITS(GPIOC->ODR, GPIO_ODR_8);
+        else if (dir == DCMOTOR_BWD) SET_BITS(GPIOC->ODR, GPIO_ODR_9);
+    }
+}
+
+void DCMotor_SetMotor(uint8_t motor, uint8_t dir, uint16_t dutyCycle){
+    DCMotor_SetDir(motor, dir);
+    DCMotor_SetSpeed(motor, dutyCycle);
+}
+
+void DCMotor_SetMotors(uint8_t leftDir, uint8_t rightDir, uint16_t leftDutyCycle, uint16_t rightDutyCycle){
+    DCMotor_SetMotor(DCMOTOR_LEFT, leftDir, leftDutyCycle);
+    DCMotor_SetMotor(DCMOTOR_RIGHT, rightDir, rightDutyCycle);
+}
+
+void DCMotor_Stop(void){
+    DCMotor_SetMotors(DCMOTOR_STOP, DCMOTOR_STOP, 0, 0);
+}
+
+void DCMotor_Forward(uint16_t dutyCycle){
+    DCMotor_SetMotors(DCMOTOR_FWD, DCMOTOR_FWD, dutyCycle, dutyCycle);
+}
+
+void DCMotor_Backward(uint16_t dutyCycle){
+    DCMotor_SetMotors(DCMOTOR_BWD, DCMOTOR_BWD, dutyCycle, dutyCycle);
+}

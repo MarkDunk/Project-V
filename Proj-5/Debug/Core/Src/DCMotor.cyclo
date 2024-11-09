@@ -1,0 +1,9 @@
+../Core/Src/DCMotor.c:21:6:configure_pwm_channel	3
+../Core/Src/DCMotor.c:37:6:DCMotor_Init	1
+../Core/Src/DCMotor.c:90:6:DCMotor_SetSpeed	5
+../Core/Src/DCMotor.c:102:6:DCMotor_SetDir	7
+../Core/Src/DCMotor.c:116:6:DCMotor_SetMotor	1
+../Core/Src/DCMotor.c:121:6:DCMotor_SetMotors	1
+../Core/Src/DCMotor.c:126:6:DCMotor_Stop	1
+../Core/Src/DCMotor.c:130:6:DCMotor_Forward	1
+../Core/Src/DCMotor.c:134:6:DCMotor_Backward	1

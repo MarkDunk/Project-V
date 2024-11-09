@@ -27,9 +27,10 @@
 /* USER CODE BEGIN Includes */
 #include "UART.h"
 #include "Encoder.h"
-#include "DriveMotor.h"
+//#include "DriveMotor.h"
 #include "Stepper.h"
 #include "PWM.h"
+#include "DCMotor.h"
 
 /* USER CODE END Includes */
 
@@ -52,7 +53,8 @@
 
 /* USER CODE BEGIN PV */
 
-uint8_t State[4] = {0};
+uint8_t State[4] = {0,0,128,128};
+uint8_t ROBOT[4] = {0};
 
 /* USER CODE END PV */
 
@@ -100,12 +102,14 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
-  MX_UART4_Init();
+//  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
   Encoder_Init();
   PWMInit();
-  DriveMotor_Init();
+  DCMotor_Init();
+  DCMotor_SetSpeed(DCMOTOR_LEFT, 0);
+  DCMotor_SetSpeed(DCMOTOR_RIGHT, 0);
   Stepper_Init();
   Home_Stepper();
 
@@ -113,7 +117,10 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_2);
 
-  HAL_UART_Receive_DMA(&huart4, State, 4);
+//  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
+//  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+
+  HAL_UART_Receive_DMA(&huart2, State, 4);
 
   /* USER CODE END 2 */
 
@@ -125,10 +132,27 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  //Bytes 1=right motor sp, 2=left motor sp, 3=stepper angle, 4=servo angle
-	  SetMotorSpeed(1, State[0]);
-	  SetMotorSpeed(2, State[1]);
+
+	  //******* Check if state has changed, update the PID setpoint but PID IRQ processes logic and calls set motor
+//	  SetMotorSpeed(1, State[0]);
+//	  SetMotorSpeed(2, State[1]);
+	  DCMotor_SetDir(0, 1);
+	  DCMotor_SetDir(1, 1);
+	  DCMotor_SetSpeed(0,	50);
+	  DCMotor_SetSpeed(1, 50);
+	  HAL_Delay(1000);
+	  DCMotor_SetDir(0, 1);
+	  	  DCMotor_SetDir(1, 1);
+	  	  DCMotor_SetSpeed(0, 1);
+	  	  DCMotor_SetSpeed(1, 1);
+	  	HAL_Delay(5000);
+
+
+	  //******** Do the same here but with
 	  Set_Position(State[2]);
 	  SetAngle(State[3]);
+
+	  //*****need a get state function,this will return over DMA*****
 	  //calculateAndDisplayMotorSpeed();
   }
   /* USER CODE END 3 */
@@ -172,10 +196,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2|RCC_PERIPHCLK_UART4
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2|RCC_PERIPHCLK_TIM8
                               |RCC_PERIPHCLK_TIM2;
   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
-  PeriphClkInit.Uart4ClockSelection = RCC_UART4CLKSOURCE_PCLK1;
+  PeriphClkInit.Tim8ClockSelection = RCC_TIM8CLK_HCLK;
   PeriphClkInit.Tim2ClockSelection = RCC_TIM2CLK_HCLK;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
@@ -185,32 +209,47 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-void calculateAndDisplayMotorSpeed() {
-    // Calculate encoder periods
-    uint32_t* both = Calculate_Encoder_TimePeriod();
-
-    // Retrieve global encoder periods
-    uint32_t leftPeriod = *both;
-    both += 1;
-    uint32_t rightPeriod = *both;
-
-    // Calculate the speed of the left and right wheels in terms of revolutions per second
-    // Assuming 20 vanes per wheel revolution and period in microseconds
-    float leftSpeed = (float)(1.0 / (leftPeriod * 20e-6)); // Left wheel speed in revolutions per second
-    float rightSpeed = (float)(1.0 / (rightPeriod * 20e-6)); // Right wheel speed in revolutions per second
-    leftSpeed = leftSpeed*3.14*3;
-    rightSpeed = rightSpeed*3.14*3;
-    // Display the calculated motor wheel speed on the terminal
-        UARTprintf("Left Wheel Speed: %.2f inch/s\n", (double)leftSpeed);
-        UARTprintf("Right Wheel Speed: %.2f inch/s\n", (double)rightSpeed);
-//    UARTprintf("Left Wheel Speed: %.2f revolutions/s\n", (double)leftSpeed);
-//    UARTprintf("Right Wheel Speed: %.2f revolutions/s\n", (double)rightSpeed);
-//    UARTputc((char)leftSpeed);
-}
+//uint8_t* GetRobotState(){
+//	uint8_t* dummy;
+//	return (dummy);
+//}
+//void calculateAndDisplayMotorSpeed() {
+//    // Calculate encoder periods
+//    uint32_t* both = Calculate_Encoder_TimePeriod();
+//
+//    // Retrieve global encoder periods
+//    uint32_t leftPeriod = *both;
+//    both += 1;
+//    uint32_t rightPeriod = *both;
+//
+//    // Calculate the speed of the left and right wheels in terms of revolutions per second
+//    // Assuming 20 vanes per wheel revolution and period in microseconds
+//    float leftSpeed = (float)(1.0 / (leftPeriod * 20e-6)); // Left wheel speed in revolutions per second
+//    float rightSpeed = (float)(1.0 / (rightPeriod * 20e-6)); // Right wheel speed in revolutions per second
+//    leftSpeed = leftSpeed*3.14*3;
+//    rightSpeed = rightSpeed*3.14*3;
+//    // Display the calculated motor wheel speed on the terminal
+//        UARTprintf("Left Wheel Speed: %.2f inch/s\n", (double)leftSpeed);
+//        UARTprintf("Right Wheel Speed: %.2f inch/s\n", (double)rightSpeed);
+////    UARTprintf("Left Wheel Speed: %.2f revolutions/s\n", (double)leftSpeed);
+////    UARTprintf("Right Wheel Speed: %.2f revolutions/s\n", (double)rightSpeed);
+////    UARTputc((char)leftSpeed);
+//}
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	HAL_UART_Transmit(&huart2, State, 4, 100);
-	HAL_UART_Receive_DMA(&huart4, State, 4);
+	HAL_UART_Receive_DMA(&huart2, State, 4);
+
+	HAL_UART_Transmit(&huart2, State, sizeof(State), 100);
+}
+
+void HAL_Timercallback(){
+	uint8_t* rbt;
+  rbt = GetRobotState();
+
+  ROBOT[0] = *rbt;
+  ROBOT[1] = ++*rbt;
+  ROBOT[2] = ++*rbt;
+  ROBOT[3] = ++*rbt;
 }
 
 /* USER CODE END 4 */

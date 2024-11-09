@@ -3,5 +3,5 @@
 ../Core/Src/Encoder.c:34:6:Encoder_Init	1
 ../Core/Src/Encoder.c:79:6:HAL_TIM_IC_CaptureCallback	3
 ../Core/Src/Encoder.c:102:11:Calculate_Encoder_TimePeriod	1
-../Core/Src/Encoder.c:120:8:calculateRealMotorSpeed	1
+../Core/Src/Encoder.c:120:6:calculateRealMotorSpeed	1
 ../Core/Src/Encoder.c:143:10:getEncoderCHValue	3
